@@ -2,7 +2,9 @@ import javax.swing.*;
 
 public abstract class JuegoBase {
 
-    // Método abstracto que las subclases deben implementar
+    /** 
+     *Método abstracto que las subclases deben implementar
+     */
     public abstract void iniciarJuego();
 
     /**

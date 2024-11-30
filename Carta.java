@@ -16,7 +16,7 @@ public class Carta {
      */
     public static JPanel generarTarjetaBingo() {
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(5, 5));  // Mantener la estructura de 5x5
+        panel.setLayout(new GridLayout(5, 5));  
         int[][] rangos = {{1, 15}, {16, 30}, {31, 45}, {46, 60}, {61, 75}};
 
         // Generar los números para cada columna
@@ -33,12 +33,10 @@ public class Carta {
                 label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
                 if (fila == 2 && col == 2) {
-                    // El espacio central "FREE"
                     label.setText("FREE");
                     label.setBackground(Color.LIGHT_GRAY);
                     label.setOpaque(true);
                 } else {
-                    // Asignar los números de las columnas
                     label.setText(String.valueOf(columnas.get(col).get(fila)));
                 }
                 panel.add(label);

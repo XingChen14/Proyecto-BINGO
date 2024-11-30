@@ -7,7 +7,7 @@ import javax.swing.*;
 public class Juego extends JuegoBase {
     private static List<Integer> numerosBingo = new ArrayList<>();
     private static JLabel numeroActualLabel = new JLabel("0", SwingConstants.CENTER);
-    private static JPanel bingoCard; // Variable para guardar la tarjeta de bingo
+    private static JPanel bingoCard; 
     private static JLabel[][] historialLabels = Historial.inicializarHistorial();
 
     /**
@@ -27,7 +27,7 @@ public class Juego extends JuegoBase {
         bingoCardPanel.setLayout(new BorderLayout());
 
         // Generar la tarjeta de bingo (solo se genera una vez)
-        bingoCard = Carta.generarTarjetaBingo();  // Guardamos la tarjeta en la variable bingoCard
+        bingoCard = Carta.generarTarjetaBingo();  
         JLabel bingoLabel = new JLabel("B   I   N   G   O", SwingConstants.CENTER);
         bingoLabel.setFont(new Font("Arial", Font.BOLD, 20));
         bingoCardPanel.add(bingoLabel, BorderLayout.NORTH);
@@ -100,9 +100,9 @@ public class Juego extends JuegoBase {
                 for (int col = 0; col < 5; col++) {
                     JLabel label = (JLabel) bingoCard.getComponent(fila * 5 + col);
                     if (label.getText().equals(String.valueOf(numero))) {
-                        label.setBackground(Color.GRAY); // Cambiar el color a gris
+                        label.setBackground(Color.GRAY); 
                         label.setOpaque(true);
-                        label.setForeground(Color.BLACK); // Asegurarse de que el texto sea visible
+                        label.setForeground(Color.BLACK); 
                     }
                 }
             }
@@ -143,7 +143,6 @@ public class Juego extends JuegoBase {
      *
      * @return true si el jugador ha ganado, false en caso contrario.
      */
-    // Verificar si el patrón seleccionado por el jugador se cumple en la tarjeta de bingo.
 private static boolean verificarPatronGanador() {
     // Obtener el patrón seleccionado
     boolean[][] patron = FormaGanar.patronesDeGanar.get(FormaGanar.patronSeleccionado);
@@ -151,21 +150,19 @@ private static boolean verificarPatronGanador() {
     // Recorrer la tarjeta de bingo y verificar si cumple con el patrón
     for (int fila = 0; fila < 5; fila++) {
         for (int col = 0; col < 5; col++) {
-            // Si es la casilla central, considerarla como marcada
             if (fila == 2 && col == 2) {
-                continue; // Ignorar la casilla central
+                continue; 
             }
 
             JLabel label = (JLabel) bingoCard.getComponent(fila * 5 + col);
             boolean marcado = label.getBackground().equals(Color.GRAY); // Comprobar si está marcado
 
-            // Si el patrón requiere que esté marcado y no lo está, o viceversa, no cumple
             if (patron[fila][col] && !marcado) {
                 return false;
             }
         }
     }
-    return true; // Cumple con el patrón
+    return true; 
 }
 
 

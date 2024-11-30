@@ -27,9 +27,8 @@ public class Historial {
         // Llenamos las siguientes columnas con los números correspondientes a cada letra
         for (int col = 1; col < 16; col++) {
             for (int fila = 0; fila < 5; fila++) {
-                // Calcular el número para cada celda
-                int numero = rangos[fila][0] + col - 1; // Para obtener el rango correcto
-                if (numero <= rangos[fila][1]) {  // Solo asignar el número si está dentro del rango
+                int numero = rangos[fila][0] + col - 1; 
+                if (numero <= rangos[fila][1]) { 
                     historialLabels[fila][col] = new JLabel(String.valueOf(numero), SwingConstants.CENTER);
                     historialLabels[fila][col].setFont(new Font("Arial", Font.BOLD, 14));
                     historialLabels[fila][col].setBorder(BorderFactory.createLineBorder(Color.BLACK));
@@ -39,7 +38,6 @@ public class Historial {
                 }
             }
         }
-
         return historialLabels;
     }
 

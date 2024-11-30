@@ -6,8 +6,7 @@ public class Main {
     private static JuegoBase juego; // Instancia de un juego concreto que extiende JuegoBase
 
     public static void main(String[] args) {
-        // Inicializar el juego concreto
-        juego = new Juego(); // Juego extiende JuegoBase
+        juego = new Juego(); 
         mostrarMenuInicio();
     }
 

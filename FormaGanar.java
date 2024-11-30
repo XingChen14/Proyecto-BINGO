@@ -298,7 +298,7 @@ public class FormaGanar {
         }
     
         // Crear un panel principal con un diseño de cuadrícula
-        JPanel panel = new JPanel(new GridLayout(0, 4, 10, 10)); // Hasta 4 patrones por fila
+        JPanel panel = new JPanel(new GridLayout(0, 4, 10, 10)); 
         List<JButton> botones = new ArrayList<>();
     
         // Generar un componente visual para cada patrón
@@ -309,24 +309,22 @@ public class FormaGanar {
     
             // Botón para seleccionar el patrón
             JButton boton = new JButton("Seleccionar");
-            final int indice = i; // Necesario para usar dentro del lambda
+            final int indice = i; 
             boton.addActionListener(e -> {
                 patronSeleccionado = indice;
                 JOptionPane.showMessageDialog(Main.mainMenu, "Patrón seleccionado: " + (indice + 1));
             });
     
-            // Panel que contiene el patrón y su botón
             JPanel contenedor = new JPanel(new BorderLayout());
             contenedor.add(patronPanel, BorderLayout.CENTER);
             contenedor.add(boton, BorderLayout.SOUTH);
     
-            // Añadir al panel principal
             panel.add(contenedor);
         }
     
         // Mostrar los patrones en un cuadro de diálogo
-        JScrollPane scrollPane = new JScrollPane(panel); // Agregar scroll si hay muchos patrones
-        scrollPane.setPreferredSize(new Dimension(800, 600)); // Tamaño del cuadro de diálogo
+        JScrollPane scrollPane = new JScrollPane(panel); 
+        scrollPane.setPreferredSize(new Dimension(800, 600)); 
         JOptionPane.showMessageDialog(Main.mainMenu, scrollPane, "Selecciona una forma de ganar", JOptionPane.PLAIN_MESSAGE);
     }
     
@@ -342,8 +340,8 @@ public class FormaGanar {
             for (int col = 0; col < 5; col++) {
                 JLabel label = new JLabel();
                 label.setOpaque(true);
-                label.setPreferredSize(new Dimension(30, 30)); // Tamaño de cada celda
-                label.setBackground(patron[fila][col] ? Color.BLUE : Color.LIGHT_GRAY); // Azul para marcado
+                label.setPreferredSize(new Dimension(30, 30));
+                label.setBackground(patron[fila][col] ? Color.BLUE : Color.LIGHT_GRAY); 
                 panel.add(label);
             }
         }
